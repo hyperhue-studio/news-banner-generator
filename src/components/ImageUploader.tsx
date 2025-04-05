@@ -81,10 +81,6 @@ const ImageUploader: React.FC = () => {
 
         {uploadedImage && (
           <div className="adjustment-controls">
-            <button className="preset-button" onClick={applyPreset}>
-              Aplicar Posición Recomendada
-            </button>
-
             <div className="control-group">
               <label>
                 Posición X:
@@ -142,9 +138,14 @@ const ImageUploader: React.FC = () => {
               </label>
             </div>
 
-            <button className="download-button" onClick={handleDownload}>
-              Descargar Banner
-            </button>
+            <div className="button-container">
+              <button className="download-button" onClick={handleDownload}>
+                Descargar Banner
+              </button>
+              <button className="download-button" onClick={applyPreset}>
+                Aplicar Posición Recomendada
+              </button>
+            </div>
           </div>
         )}
       </div>
