@@ -43,6 +43,13 @@ const ImageUploader: React.FC = () => {
     setScale(parseFloat(e.target.value));
   };
 
+  // Función para aplicar los valores preset
+  const applyPreset = () => {
+    setPosition({ x: 57, y: 4 });
+    setRotation(342);
+    setScale(1.1);
+  };
+
   // Función para descargar la imagen
   const handleDownload = async () => {
     if (containerRef.current) {
@@ -74,6 +81,10 @@ const ImageUploader: React.FC = () => {
 
         {uploadedImage && (
           <div className="adjustment-controls">
+            <button className="preset-button" onClick={applyPreset}>
+              Aplicar Posición Recomendada
+            </button>
+
             <div className="control-group">
               <label>
                 Posición X:
